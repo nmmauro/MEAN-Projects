@@ -3,7 +3,7 @@ const router = express.Router()
 const mongoose = require('mongoose')
 const db = mongoose.connection
 
-db.once('open', function () {
+db.once('open', function() {
     console.log('Connected to database!')
 })
 
@@ -46,7 +46,7 @@ router.get('/:name', function(req, res, next) {
   If no string is passed into the URI, return all strings in the database and their lengths.
  */
 router.get('/', function(req, res, next) {
-    data.find({}, function (err, results) {
+    data.find({}, function(err, results) {
         res.json(results)
     })
 })
@@ -62,13 +62,13 @@ router.post('/', function(req, res, next) {
         res.json("Please provide a string in the test body.")
     }
     else {
-        data.findOne({ string: req.body.test }, function (err, results) {
+        data.findOne({ string: req.body.test }, function(err, results) {
             if (results == null) {
                 let entry = new data({
                     string: req.body.test,
                     length: req.body.test.length
                 })
-                entry.save(function (err) {
+                entry.save(function(err) {
                     if (err) { res.send(err) }
                     else {
                         res.json(entry)
@@ -89,5 +89,20 @@ router.post('/', function(req, res, next) {
   If no, return a 'string not found' JSON message.
   If yes, delete the string from the database, and return a JSON message indicating success.
  */
+router.delete('/:name', function(req, res, next) {
+    data.findOne({ string: req.params.name }, function(err, results) {
+        if (results == null) {
+            res.json("String not found!")
+        }
+        else {
+            data.findOneAndRemove({ string: req.params.name }, function(err, results) {
+                if (err) { res.send(err) }
+                else {
+                    res.json("String deleted!")
+                }
+            })
+        }
+    })
+})
 
 module.exports = router
