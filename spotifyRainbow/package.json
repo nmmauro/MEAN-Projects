@@ -1,5 +1,5 @@
 {
-  "name": "mongoose-simple-schema",
+  "name": "spotifyrainbow",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -10,9 +10,14 @@
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.3",
     "express": "~4.15.2",
+    "fs": "0.0.1-security",
     "jade": "~1.11.0",
-    "mongoose": "^4.10.5",
+    "mongoose": "^4.10.8",
     "morgan": "~1.8.1",
+    "node-vibrant": "^2.0.0",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.1",
+    "request-promise-lite": "^0.8.1",
     "serve-favicon": "~2.4.2"
   }
 }

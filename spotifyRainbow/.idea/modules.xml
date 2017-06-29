@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Mongoose Simple Schema.iml" filepath="$PROJECT_DIR$/.idea/Mongoose Simple Schema.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/spotifyRainbow.iml" filepath="$PROJECT_DIR$/.idea/spotifyRainbow.iml" />
     </modules>
   </component>
 </project>
