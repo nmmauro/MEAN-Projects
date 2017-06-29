@@ -121,7 +121,7 @@ app.get('/callback', function(req, res) {
                         access_token: access_token,
                         refresh_token: refresh_token
                     }));
-               /* let Token = 'Bearer BQAwE7J0lQwjPFwt7nj0DCuhnqyGsdNwsJ9o8VrvFUzydVVV8dTv1D0RGS-KUrYyzMiymLvGcRI49ixCWB31M1SOMbBYlWlWs_RwCdHoDracTeJ_5uBmwKhSsIbiD-nNPNkGa0TLl8uEFiQ_abYF3E93YIwGtDNmDgj0rhUO-SE';
+                let Token = 'Bearer BQAwE7J0lQwjPFwt7nj0DCuhnqyGsdNwsJ9o8VrvFUzydVVV8dTv1D0RGS-KUrYyzMiymLvGcRI49ixCWB31M1SOMbBYlWlWs_RwCdHoDracTeJ_5uBmwKhSsIbiD-nNPNkGa0TLl8uEFiQ_abYF3E93YIwGtDNmDgj0rhUO-SE';
                 let spotifyAPI = 'https://api.spotify.com/v1/me/tracks?limit=50'
                 let spotifyOptions = {
                     headers: {
@@ -148,7 +148,7 @@ app.get('/callback', function(req, res) {
                             })
                         })
                     }
-                })*/
+                })
             } else {
                 res.redirect('/#' +
                     querystring.stringify({
