@@ -2,12 +2,10 @@ angular
     .module('photoCollageModule', [])
     .controller('photoCollageCtrl', function ($scope, $http) {
 
-        $http.get('/../bin/myjsonfile.json')
-            .then(function(data){
-                $scope = JSON.parse(data)
-            })
-
-        var imgSource = $scope
+        $http.get('/../bin/myjsonfile.json').then(function(response) {
+            $scope.images = JSON.parse(response);
+        })
+        var imgSource = $scope.images
 
 //define the image source(s)
 
